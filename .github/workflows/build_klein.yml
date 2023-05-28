@@ -9,6 +9,11 @@ jobs:
     container: qmkfm/qmk_cli
     steps:
     - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: pip3 install -r requirements.txt
+
+
     - name: QMK setup
       run: qmk setup -y
     - name: Build Klein
